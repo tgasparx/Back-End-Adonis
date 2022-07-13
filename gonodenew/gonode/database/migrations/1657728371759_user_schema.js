@@ -1,6 +1,6 @@
 'use strict'
 
-/** @type {import('@adonisjs/lucid/src/Schema' : any)} */
+/** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
 class UserSchema extends Schema {
@@ -10,6 +10,8 @@ class UserSchema extends Schema {
       table.string('username', 80).notNullable().unique()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
+      table.string('token', 80) //token
+      table.string('token_created_at', 100) // era pra ser timestamps mas de uerro
       table.timestamps()
     })
   }
